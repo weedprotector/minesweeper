@@ -244,6 +244,11 @@ h1,h2, p {
     line-height: 22px;
     letter-spacing: 0.06em;
     color: #292929;
+    &:hover {
+        cursor: pointer;
+        background: #FDDCC4;
+        transition: all 1s;
+    }
 }
 
 /* About */
@@ -328,6 +333,11 @@ h1,h2, p {
     border: 2px solid #F1CDB3;
     border-radius: 100px;
     margin-top: 192px;
+    &:hover {
+        cursor: pointer;
+        background: #FDDCC4;
+        transition: all 1s;
+    }
 }
 
 .ico__arrow {
@@ -373,6 +383,12 @@ h1,h2, p {
     color: #292929;
     padding: 14px 43px;
     margin: 0 auto;
+    &:hover {
+        cursor: pointer;
+        background: #FDDCC4;
+        transition: all 1s;
+
+    }
 }
 
 .our-friends__button {
@@ -386,6 +402,11 @@ h1,h2, p {
     color: #292929;
     padding: 15px 45px;
     margin: 0 auto;
+    &:hover {
+        cursor: pointer;
+        background: #FDDCC4;
+        transition: all 1s;
+    }
 }
 
 /* Help */
@@ -421,7 +442,9 @@ h1,h2, p {
 
 .second-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 84%;
 }
 
 .pet-items__item {
@@ -442,4 +465,154 @@ h1,h2, p {
     letter-spacing: 0.06em;
     color: #545454;
     padding-top: 26px;
+}
+
+/* In addittion*/
+.in-addition {
+    background-color: #F6F6F6;
+}
+
+.in-addittion__wrapper {
+    max-width: 1280px;
+    box-sizing: border-box;
+    padding: 80px 182px 100px 183px;
+    display: flex;
+}
+
+.in-addition__img {
+    padding-top: 11px;
+    padding-bottom: 10px;
+}
+
+.in-addition__content {
+    padding-left: 30px;
+}
+
+.in-addition__title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    color: #545454;
+    padding-bottom: 20px;
+}
+
+.in-addition__text {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    color: #545454;
+    padding-bottom: 20px;
+}
+
+.in-addition__card {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: #F1CDB3;
+    border-radius: 9px;
+    margin-right: 31px;
+}
+
+.in-addition__card-number {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #545454;
+    
+}
+
+.in-addition__warning {
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #B2B2B2;
+    padding-top: 20px;
+}
+
+/* Footer */
+
+.footer {
+    background-image: url(../img/noise.png);
+}
+
+.footer__wrapper {
+    padding-top: 40px;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__column {
+    padding-top: 16px;
+}
+
+.footer__title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+}
+
+.column__line {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 43px;
+}
+
+.email, .phone{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    align-self: center;
+    
+}
+
+.footer__contacts-mail {
+    padding-right: 27px;
+}
+
+.footer__contacts-phone {
+    padding-right: 39px;
+}
+
+
+.footer__addresses {
+    max-width: 302px;
+}
+
+.location {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    padding-left: 20px;
+    align-self: center;
+}
+
+.footer__address {
+    padding-top: 34px;
+    justify-content: flex-start;
 }
