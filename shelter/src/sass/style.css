@@ -171,6 +171,15 @@ h1, h2, p {
   margin-left: 0;
   border-bottom: #F1CDB3 3px solid;
 }
+.navigation__link a {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: #CDCDCD;
+  text-decoration: none;
+}
 
 /* Not only */
 .not-only__wrapper {
