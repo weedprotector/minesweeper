@@ -331,6 +331,11 @@ h1, h2, p {
   padding-bottom: 30px;
 }
 
+.pet-card__img {
+  width: 270px;
+  height: 270px;
+}
+
 .pet-card__name {
   font-family: "Georgia";
   font-style: normal;
@@ -582,6 +587,65 @@ h1, h2, p {
 .footer__address {
   padding-top: 34px;
   justify-content: flex-start;
+}
+
+.pets__header {
+  background: #FFFFFF;
+  padding-bottom: 30px;
+}
+
+.pets__logo__title {
+  color: #545454;
+}
+
+.pets__logo__subtitle {
+  color: #292929;
+}
+
+.pets__navigation__link {
+  color: #545454;
+}
+
+.pets__navigation__link:first-child {
+  border-bottom: none;
+}
+
+.pets__navigation__link-active {
+  border-bottom: #F1CDB3 3px solid;
+  color: #292929;
+}
+
+.pets__slider {
+  padding-bottom: 45px;
+}
+
+.pets__slides-content {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.pets__slides-bar {
+  justify-content: space-between;
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.first, .one-prev, .now, .one-next, .last {
+  margin-top: 0;
+}
+
+.now {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #292929;
+  align-items: center;
+  background: #F1CDB3;
 }
 
 /*# sourceMappingURL=style.css.map */
