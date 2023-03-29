@@ -118,6 +118,10 @@ h1,h2, p {
     font-display: swap;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -192,6 +196,11 @@ h1,h2, p {
     font-size: 15px;
     line-height: 24px;
     color: #CDCDCD;
+    :hover {
+        cursor: pointer;
+        color: #FAFAFA;
+        transition: all 1s;
+    }
     &:first-child {
         margin-left: 0;
         border-bottom: #F1CDB3 3px solid;
@@ -205,6 +214,7 @@ h1,h2, p {
         color: #CDCDCD;
         text-decoration: none;
     }
+    
 }
 
 /* Not only */
@@ -366,6 +376,13 @@ h1,h2, p {
     background-color: #FAFAFA;
     border-radius: 9px;
     padding-bottom: 30px;
+    &:hover {
+        .pet-card__button {
+            cursor: pointer;
+            background: #FDDCC4;
+            transition: all 1s;
+        } 
+    }
 }
 
 .pet-card__img {
@@ -398,12 +415,7 @@ h1,h2, p {
     color: #292929;
     padding: 14px 43px;
     margin: 0 auto;
-    &:hover {
-        cursor: pointer;
-        background: #FDDCC4;
-        transition: all 1s;
-
-    }
+    
 }
 
 .our-friends__button {
@@ -532,6 +544,10 @@ h1,h2, p {
     background: #F1CDB3;
     border-radius: 9px;
     margin-right: 31px;
+    &:hover {
+        cursor: pointer;
+
+    }
 }
 
 .in-addition__card-number {
@@ -650,7 +666,13 @@ h1,h2, p {
 }
 
 .pets__navigation__link {
-    color: #545454;
+    a{
+        color: #545454;
+        &:hover {
+            color: #292929;
+        }
+    }
+    
 }
 
 .pets__navigation__link {
