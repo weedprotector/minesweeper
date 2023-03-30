@@ -156,6 +156,10 @@ html {
   align-self: center;
 }
 
+.logo__link {
+  text-decoration: none;
+}
+
 .navigation {
   display: flex;
   list-style-type: none;
@@ -229,6 +233,8 @@ html {
 
 .not-only__button {
   padding: 15px 45px;
+}
+.not-only__button a {
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
@@ -236,6 +242,7 @@ html {
   line-height: 22px;
   letter-spacing: 0.06em;
   color: #292929;
+  text-decoration: none;
 }
 .not-only__button:hover {
   cursor: pointer;
@@ -387,7 +394,12 @@ html {
 }
 
 .our-friends__button {
+  padding: 15px 45px;
   display: block;
+  margin: 0 auto;
+}
+.our-friends__button a {
+  text-decoration: none;
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
@@ -395,8 +407,6 @@ html {
   line-height: 22px;
   letter-spacing: 0.06em;
   color: #292929;
-  padding: 15px 45px;
-  margin: 0 auto;
 }
 .our-friends__button:hover {
   cursor: pointer;
@@ -640,7 +650,7 @@ html {
 }
 
 .pets__slider {
-  padding-bottom: 45px;
+  padding-bottom: 60px;
 }
 
 .pets__slides-content {

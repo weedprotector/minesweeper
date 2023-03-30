@@ -182,6 +182,10 @@ html {
     }
 }
 
+.logo__link {
+    text-decoration: none;
+}
+
 .navigation {
     display: flex;
     list-style-type: none;
@@ -257,13 +261,17 @@ html {
 
 .not-only__button {
     padding: 15px 45px;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 22px;
-    letter-spacing: 0.06em;
-    color: #292929;
+    a{
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: 0.06em;
+        color: #292929;
+        text-decoration: none;
+    }
+    
     &:hover {
         cursor: pointer;
         background: #FDDCC4;
@@ -419,16 +427,19 @@ html {
 }
 
 .our-friends__button {
-    display: block;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 22px;
-    letter-spacing: 0.06em;
-    color: #292929;
     padding: 15px 45px;
+    display: block;
     margin: 0 auto;
+    a {
+        text-decoration: none;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: 0.06em;
+        color: #292929;
+    }
     &:hover {
         cursor: pointer;
         background: #FDDCC4;
@@ -687,7 +698,7 @@ html {
 }
 
 .pets__slider {
-    padding-bottom: 45px;
+    padding-bottom: 60px;
 }
 
 .pets__slides-content {
