@@ -791,7 +791,8 @@ html {
 
     .about__content {
         padding: 0;
-        padding-bottom: 80px;   
+        padding-bottom: 80px;  
+        margin: 0 auto; 
     }
 
     .about__image {
@@ -849,6 +850,10 @@ html {
 
     .in-addition__content {
         padding: 0 62px 60px 63px;
+    }
+
+    .in-addition__card {
+        max-width: 349px;
     }
 
     .in-addition__img {
