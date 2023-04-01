@@ -436,6 +436,10 @@ html {
   max-width: 1026px;
   height: 281px;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 55px 119px;
 }
 
 .first-row {
@@ -680,6 +684,109 @@ html {
   color: #292929;
   align-items: center;
   background: #F1CDB3;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1268px) {
+  .wrapper {
+    padding: 0 100px;
+  }
+  .header__wrapper {
+    padding: 0 30px;
+  }
+  .logo__subtitle {
+    justify-content: center;
+  }
+  .navigation__link {
+    margin-left: 36px;
+  }
+  .not-only {
+    padding-top: 60px;
+  }
+  .not-only__wrapper {
+    flex-direction: column;
+  }
+  .not-only__content {
+    padding: 0 54px 0 55px;
+  }
+  .not-only__title {
+    padding-right: 150px;
+  }
+  .not-only__content {
+    padding-bottom: 100px;
+  }
+  .not-only__button {
+    display: block;
+    margin: 0 auto;
+  }
+  .not-only__img {
+    position: relative;
+    left: 90px;
+  }
+  .about__wrapper {
+    padding: 80px 166px 100px 165px;
+    flex-direction: column-reverse;
+  }
+  .about__content {
+    padding: 0;
+    padding-bottom: 80px;
+  }
+  .about__image {
+    padding-left: 0;
+    margin: 0 auto;
+  }
+  .our-friends__wrapper {
+    padding: 80px 30px 100px 30px;
+  }
+  .our-friends__slider {
+    gap: 12px;
+  }
+  .change-slide {
+    display: inline-flex;
+  }
+  .slides-content {
+    display: inline-flex;
+    overflow: hidden;
+    justify-content: space-between;
+    width: 84%;
+    gap: 40px;
+  }
+  .help__wrapper {
+    padding-left: 69px;
+    padding-right: 69px;
+  }
+  .pet-items__content {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    justify-content: space-between;
+    min-height: 449px;
+  }
+  .pet-items__item {
+    width: 170px;
+  }
+  .in-addittion__wrapper {
+    flex-direction: column-reverse;
+    padding: 80px 132px 100px 131px;
+  }
+  .in-addition__content {
+    padding: 0 62px 60px 63px;
+  }
+  .in-addition__img {
+    padding: 0;
+  }
+  .footer__wrapper {
+    padding: 30px 64px 0 64px;
+  }
+  .footer__content {
+    flex-wrap: wrap;
+  }
+  .footer__column {
+    padding-top: 0px;
+  }
+  .footer__img {
+    margin: 0 auto;
+    padding-top: 65px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
