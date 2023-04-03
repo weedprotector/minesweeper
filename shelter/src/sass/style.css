@@ -577,7 +577,7 @@ html {
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
-  font-size: 35px;
+  font-size: 34px;
   line-height: 45px;
   letter-spacing: 0.06em;
   color: #FFFFFF;
@@ -598,6 +598,10 @@ html {
   letter-spacing: 0.06em;
   color: #F1CDB3;
   align-self: center;
+}
+
+.footer__contacts {
+  width: 278px;
 }
 
 .footer__contacts-mail {
@@ -689,6 +693,13 @@ html {
   color: #292929;
   align-items: center;
   background: #F1CDB3;
+}
+
+.hamburger {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 23px;
 }
 
 @media screen and (max-width: 1268px) {
@@ -814,6 +825,241 @@ html {
 @media screen and (max-width: 1106px) {
   .slides-content {
     max-width: 582px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wrapper {
+    padding: 0 10px 0 10px;
+  }
+  .header__wrapper {
+    padding: 0 20px;
+  }
+  .header__navigation {
+    display: none;
+  }
+  .hamburger {
+    display: inline-block;
+    top: 19px;
+  }
+  .hamburger::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #F1CDB3;
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: 0;
+  }
+  .hamburger::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #F1CDB3;
+    width: 100%;
+    height: 2px;
+    top: calc(100% - 3px);
+    left: 0;
+  }
+  .hamburger__line {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #F1CDB3;
+    width: 100%;
+    height: 2px;
+    top: calc(50% - 1px);
+    left: 0;
+  }
+  .not-only__content {
+    padding: 0;
+    padding-bottom: 105px;
+  }
+  .not-only__title {
+    padding-left: 34px;
+    padding-right: 35px;
+    font-size: 25px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
+  .not-only__text {
+    text-align: center;
+  }
+  .not-only__img {
+    left: 40px;
+    width: 260px;
+  }
+  .about__wrapper {
+    padding: 42px 25px;
+  }
+  .about__content {
+    padding-bottom: 42px;
+  }
+  .about__title {
+    font-size: 25px;
+    line-height: 32px;
+    padding: 0;
+    padding-bottom: 25px;
+    text-align: center;
+  }
+  .about__text {
+    text-align: justify;
+  }
+  .about__text-first {
+    padding-bottom: 22px;
+  }
+  .about__image {
+    width: 260px;
+  }
+  .our-friends__wrapper {
+    padding-bottom: 42px;
+  }
+  .our-friends__title {
+    padding-top: 42px;
+    padding-bottom: 42px;
+    font-size: 25px;
+    line-height: 32px;
+  }
+  .our-friends__slider {
+    width: 270px;
+    margin: 0 auto;
+    flex-flow: wrap;
+    justify-content: center;
+    column-gap: 80px;
+    row-gap: 20px;
+    padding-bottom: 42px;
+  }
+  .slides-content {
+    order: 0;
+    width: 270px;
+  }
+  .change-slide {
+    margin-top: 0;
+  }
+  .prev-slide {
+    order: 1;
+  }
+  .next-slide {
+    order: 2;
+  }
+  .pet-card {
+    width: 100%;
+  }
+  .help__wrapper {
+    margin: 0;
+    padding-top: 42px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .help__title {
+    padding: 0 34px;
+    font-size: 25px;
+    line-height: 32px;
+    padding-bottom: 42px;
+  }
+  .pet-items__item {
+    width: 130px;
+    height: 87px;
+  }
+  .pet-items__img {
+    width: 50px;
+    height: 50px;
+  }
+  .pet-items__text {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+    padding-top: 16px;
+  }
+  .pet-items__content {
+    row-gap: 30px;
+    min-height: 555px;
+    padding-bottom: 42px;
+  }
+  .in-addition__title {
+    padding-top: 42px;
+    font-size: 25px;
+    line-height: 32px;
+  }
+  .in-addition__content {
+    padding: 0;
+    text-align: center;
+  }
+  .in-addition__text {
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+  .in-addition__card {
+    margin-right: 9px;
+    margin-left: 9px;
+  }
+  .in-addition__card-number {
+    font-size: 15px;
+    line-height: 17px;
+    align-self: center;
+  }
+  .in-addition__warning {
+    text-align: justify;
+    padding: 20px 10px 42px 10px;
+  }
+  .in-addition__img {
+    width: 260px;
+    height: 135.2px;
+    margin: 0 auto;
+    padding-bottom: 42px;
+  }
+  .footer__wrapper {
+    padding: 30px 10px 40px 10px;
+  }
+  .footer__title {
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+  .footer__content {
+    justify-content: center;
+    row-gap: 40px;
+  }
+  .footer__contacts-mail {
+    padding-right: 0;
+    max-width: 251px;
+    margin: 0 auto;
+  }
+  .footer__contacts-phone {
+    padding-right: 0;
+    max-width: 239px;
+    margin: 0 auto;
+  }
+  .footer__addresses-title {
+    padding: 0px 15px;
+  }
+  .footer__address {
+    padding-top: 40px;
+  }
+  .footer__img {
+    padding-top: 0;
+    width: 260px;
+    height: 269px;
+  }
+  .pets-hamburger__line {
+    background-color: #000000;
+  }
+  .pets-hamburger::after {
+    background-color: #000000;
+  }
+  .pets-hamburger::before {
+    background-color: #000000;
+  }
+  .pets__slider {
+    max-height: 1365px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .pets__slides-bar {
+    padding-top: 42px;
   }
 }
 
