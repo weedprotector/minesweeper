@@ -994,6 +994,8 @@ html {
   .in-addition__card {
     margin-right: 9px;
     margin-left: 9px;
+    max-width: 349px;
+    margin: 0 auto;
   }
   .in-addition__card-number {
     font-size: 15px;
@@ -1003,6 +1005,8 @@ html {
   .in-addition__warning {
     text-align: justify;
     padding: 20px 10px 42px 10px;
+    max-width: 380px;
+    margin: 0 auto;
   }
   .in-addition__img {
     width: 260px;
@@ -1011,7 +1015,7 @@ html {
     padding-bottom: 42px;
   }
   .footer__wrapper {
-    padding: 30px 10px 40px 10px;
+    padding: 30px 10px 0px 10px;
   }
   .footer__title {
     font-size: 25px;
@@ -1060,6 +1064,12 @@ html {
   }
   .pets__slides-bar {
     padding-top: 42px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .in-addition__card {
+    margin-right: 9px;
+    margin-left: 9px;
   }
 }
 

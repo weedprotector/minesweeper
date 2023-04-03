@@ -1121,6 +1121,8 @@ html {
     .in-addition__card {
         margin-right: 9px;
         margin-left: 9px;
+        max-width: 349px;
+        margin: 0 auto;
     }
 
     .in-addition__card-number {
@@ -1132,6 +1134,8 @@ html {
     .in-addition__warning {
         text-align: justify;
         padding: 20px 10px 42px 10px;
+        max-width: 380px;
+        margin: 0 auto;
     }
 
     .in-addition__img {
@@ -1143,7 +1147,7 @@ html {
 
 
     .footer__wrapper {
-        padding: 30px 10px 40px 10px;
+        padding: 30px 10px 0px 10px;
     }
 
     .footer__title {
@@ -1158,8 +1162,6 @@ html {
         row-gap: 40px;
     }
 
-    .column__line {
-    }
 
     .footer__contacts-mail {
         padding-right: 0;
@@ -1211,5 +1213,12 @@ html {
     
     .pets__slides-bar {
         padding-top: 42px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .in-addition__card {
+        margin-right: 9px;
+        margin-left: 9px;
     }
 }
