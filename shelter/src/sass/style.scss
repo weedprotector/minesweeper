@@ -323,6 +323,31 @@ html {
 }
 
 /* Our friends */
+
+@keyframes slide-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(1090px);
+    }
+}
+@keyframes slide-right {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-1090px);
+    }
+}
+
+.translate-left {
+	animation: slide-left 1s linear forwards;
+}
+
+.translate-right {
+	animation: slide-right 1s linear forwards;
+}
 .our-friends {
     background-color: #F6F6F6;
 }
@@ -374,12 +399,30 @@ html {
     height: 6px;
 }
 
-
-.slides-content {
+.slider-viewbox {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     width: 990px;
 }
+
+.slides-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    left: 0;
+    width: max-content;
+    transition: all 0.4s
+}
+
+.slides {
+    width: 990px;
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .pet-card {
     background-color: #FAFAFA;
