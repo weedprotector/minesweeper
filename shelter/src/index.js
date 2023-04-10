@@ -167,18 +167,18 @@ const rightSlides = document.querySelector('.nextSlides');
 
 const renderSlider = (item, cardNum)  => {
     item.innerHTML = `
-        <div class="pet-card">
+        <div id=${cardNum[0]} class="pet-card">
             <img class="pet-card__img" src=${petsData[cardNum[0]].img} alt="card1">
             <p class="pet-card__name">${petsData[cardNum[0]].name}</p>
             <button class="pet-card__button button-bordered">Learn more</button>
         </div>
         
-        <div class="pet-card">
+        <div id=${cardNum[1]} class="pet-card">
             <img class="pet-card__img" src=${petsData[cardNum[1]].img} alt="card1">
             <p class="pet-card__name">${petsData[cardNum[1]].name}</p>
             <button class="pet-card__button button-bordered">Learn more</button>
         </div>
-        <div class="pet-card">
+        <div id=${cardNum[2]} class="pet-card">
             <img class="pet-card__img" src=${petsData[cardNum[2]].img} alt="card1">
             <p class="pet-card__name">${petsData[cardNum[2]].name}</p>
             <button class="pet-card__button button-bordered">Learn more</button>
@@ -228,3 +228,49 @@ const moveTo = (className) => {
 prevSlide.addEventListener("click", () => moveTo("left"));
 nextSlide.addEventListener("click", () => moveTo("right"));
 
+const petCard = document.querySelectorAll('.pet-card');
+const popUp = document.querySelector('.popUp')
+
+centerSlides.addEventListener('click', (e) => {
+    let target = e.target.closest('.pet-card');
+    if (target && target.id) {
+        let id = target.id;
+        popUp.classList.toggle('hide');
+        popUp.innerHTML = `
+        <figure class="pets-description__item" >
+            <img src=${petsData[id].img} alt=${petsData[id].name} class="popUp__img">
+            <figcaption>
+                <h2 class="common-title">${petsData[id].name}</h2>
+                <h3 class="common-subtitle">${petsData[id].type} - ${petsData[id].breed}</h3>
+                <p class="pets-description__text">${petsData[id].description}</p>
+                <ul class="popUp__list">
+                    <li>
+                        <strong>Age:</strong> ${petsData[id].age}
+                    </li>
+                    <li>
+                        <strong>Inoculations:</strong> ${petsData[id].inoculations.join(", ")}
+                    </li>
+                    <li>
+                        <strong>Diseases:</strong> ${petsData[id].diseases.join(", ")}
+                    </li>
+                    <li>
+                        <strong>Parasites:</strong> ${petsData[id].parasites.join(", ")}
+                    </li>
+
+                </ul>
+            </figcaption>
+            <button class="popUp__button"><img src="src/img/icons/Cross.svg" alt="" class="popUp__cross"></button>
+	    </figure>`;
+        document.body.classList.add('scroll-lock');
+        slidesContent.style.position = 'static';
+    }
+
+})
+
+popUp.addEventListener('click', (e) => {
+    if (e.target) {
+        popUp.classList.toggle('hide')
+        document.body.classList.remove('scroll-lock');
+        slidesContent.style.display = 'relative';
+    }
+})
