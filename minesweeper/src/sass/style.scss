@@ -1,0 +1,24 @@
+$boxSize: 50px;
+
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: calc(#{$boxSize} * 10);
+    max-height: calc(#{$boxSize} * 10);
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    width: $boxSize;
+    height: $boxSize;
+    background-color: gray;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

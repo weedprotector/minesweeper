@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: calc(50px * 10);
+  max-height: calc(50px * 10);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=style.css.map */
