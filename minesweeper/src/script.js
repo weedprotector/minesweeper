@@ -1,6 +1,3 @@
-import { createCell } from "./modules/cell";
-import { addBombs, createMatrix } from "./modules/matrix";
+import { welcome } from "./modules/startGame";
 
-
-
-createMatrix();
+welcome()

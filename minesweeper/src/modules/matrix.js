@@ -4,11 +4,16 @@ import { getRandomInt } from "./generateRandom";
 export let matrix = [];
 
 export function createMatrix(width = 10, height = 10, bombCount = 10) {
+    const welcome = document.querySelector('.welcome');
+    welcome.classList.add('hidden');
+
     matrix = Array.from({length: height}, () => 
         Array.from({length: width}, () => 0)
     );
 
     addBombs(bombCount);
+
+    
 
     matrix.forEach((matrixY, y) => {
         matrixY.forEach((matrixX, x) => {
@@ -16,6 +21,9 @@ export function createMatrix(width = 10, height = 10, bombCount = 10) {
             matrix[y][x] = newCell
         })
     })
+
+    
+    console.log(matrix);
 }
 
 function addBombs(bombCount) {

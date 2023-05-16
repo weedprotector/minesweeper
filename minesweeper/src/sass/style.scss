@@ -6,19 +6,78 @@ $boxSize: 50px;
 
 .wrapper {
     margin: 0 auto;
-    max-width: calc(#{$boxSize} * 10);
-    max-height: calc(#{$boxSize} * 10);
+    /* max-width: calc(#{$boxSize} * 10);
+    max-height: calc(#{$boxSize} * 10); */
+    max-width: 700px;
+    max-height: 700px;
 
     display: flex;
     flex-wrap: wrap;
 }
 
+.welcome {
+    display: flex;
+    flex-direction: column;
+    background-color: slategrey;
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    &__message {
+        text-align: center;
+        font-size: large;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
 .cell {
-    width: $boxSize;
-    height: $boxSize;
+    width: 70px;
+    height: 70px;
     background-color: gray;
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
+    &__1 {
+        color: blue
+    };
+    &__2 {
+        color: green
+    };
+    &__3 {
+        color: red;
+    };
+    &__4 {
+        color: darkblue;
+    };
+    &__5 {
+        color: brown;
+    };
+    &__6 {
+        color: aqua;
+    };
+    &__7 {
+        color: black;
+    };
+    &__8 {
+        color: white;
+    }
+    &__start {
+        border: 4px solid black;
+        background-color: darkslategrey;
+        border-style: outset;
+        cursor: pointer;
+        font-size: 0;
+        .bomb__ico {
+            width: 0;
+            height: 0;
+        }
+    }
+}
+
+.bomb__ico {
+    height: 60px;
+    width: 60px;
 }

@@ -4,20 +4,79 @@
 
 .wrapper {
   margin: 0 auto;
-  max-width: calc(50px * 10);
-  max-height: calc(50px * 10);
+  /* max-width: calc(50px * 10);
+  max-height: calc(50px * 10); */
+  max-width: 700px;
+  max-height: 700px;
   display: flex;
   flex-wrap: wrap;
 }
 
+.welcome {
+  display: flex;
+  flex-direction: column;
+  background-color: slategrey;
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+}
+.welcome__message {
+  text-align: center;
+  font-size: large;
+}
+
+.hidden {
+  display: none;
+}
+
 .cell {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   background-color: gray;
   border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.cell__1 {
+  color: blue;
+}
+.cell__2 {
+  color: green;
+}
+.cell__3 {
+  color: red;
+}
+.cell__4 {
+  color: darkblue;
+}
+.cell__5 {
+  color: brown;
+}
+.cell__6 {
+  color: aqua;
+}
+.cell__7 {
+  color: black;
+}
+.cell__8 {
+  color: white;
+}
+.cell__start {
+  border: 4px solid black;
+  background-color: darkslategrey;
+  border-style: outset;
+  cursor: pointer;
+  font-size: 0;
+}
+.cell__start .bomb__ico {
+  width: 0;
+  height: 0;
+}
+
+.bomb__ico {
+  height: 60px;
+  width: 60px;
 }
 
 /*# sourceMappingURL=style.css.map */
