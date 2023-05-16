@@ -1,4 +1,5 @@
-import { getCountOfRoundedBombs, matrix } from "./matrix";
+import { createMatrix, getCountOfRoundedBombs, matrix, openAllBombs } from "./matrix";
+import { welcome } from "./startGame";
 
 const body = document.querySelector('body');
 const wrapper = document.createElement('div');
@@ -35,6 +36,11 @@ class Cell {
         })
     }
 
+    openCell() {
+        this.isOpened = true;
+        this.cell.classList.remove('cell__start');
+    }
+
     onCellClick() {
         if (this.value) {
             this.isOpened = true;
@@ -48,14 +54,16 @@ class Cell {
             countOfRoundedBombs.forEach(cell => {
                 if (!cell.value && !cell.isOpened) {
                     cell.onCellClick();
-                }
-                // Открывает клетки, соседние с пустыми
-                if (cell.value && !cell.isOpened) {
+                } else if (cell.value && !cell.isOpened) { // Открывает клетки, соседние с пустыми
                     this.isOpened = true;
                     this.cell.classList.remove('cell__start');
                     cell.onCellClick();
-                }
+                }     
             })
+        }
+
+        if (this.isBomb) {
+            openAllBombs();
         }
     }
 

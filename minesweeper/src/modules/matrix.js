@@ -5,7 +5,7 @@ export let matrix = [];
 
 export function createMatrix(width = 10, height = 10, bombCount = 10) {
     const welcome = document.querySelector('.welcome');
-    welcome.classList.add('hidden');
+    welcome.classList.add('hidden')
 
     matrix = Array.from({length: height}, () => 
         Array.from({length: width}, () => 0)
@@ -63,4 +63,14 @@ export function getCountOfRoundedBombs(coordinates) {
         n_7,
         n_8
     ].filter((item) => typeof item !== "undefined");
+}
+
+export function openAllBombs() {
+    matrix.forEach((matrixY, y) => {
+        matrixY.forEach((matrixX, x) => {
+            if (matrixX.isBomb) {
+                matrixX.openCell()
+            }
+        })
+    })
 }
