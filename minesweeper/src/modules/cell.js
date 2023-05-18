@@ -1,4 +1,4 @@
-import { createMatrix, getCountOfRoundedBombs, matrix, openAllBombs } from "./matrix";
+import { checkLoseGame, createMatrix, getCountOfRoundedBombs, matrix, openAllBombs } from "./matrix";
 import { welcome } from "./startGame";
 
 const body = document.querySelector('body');
@@ -39,6 +39,19 @@ class Cell {
     openCell() {
         this.isOpened = true;
         this.cell.classList.remove('cell__start');
+        if (this.isFlagged && this.isBomb) {
+            this.cell.innerHTML = this.value
+        }
+    }
+
+    setFlag(isFlagged) {
+        this.isFlagged = isFlagged;
+        if (this.isFlagged) {
+            this.cell.innerHTML = "<img class='flag__ico' src='./src/img/flag.png'>"
+        } else {
+            this.cell.innerHTML = this.value;
+            
+        }
     }
 
     onCellClick() {
@@ -65,6 +78,12 @@ class Cell {
         if (this.isBomb) {
             openAllBombs();
         }
+
+        if (this.isFlagged) {
+            this.cell.innerHTML = this.value;
+            this.cell.isOpened = true;
+            this.cell.classList.remove('cell__start')
+        }
     }
 
     renderCell() {
@@ -76,7 +95,20 @@ class Cell {
             cell.classList.add(`cell__${this.value}`)
         };
         this.cell = cell;
-        this.cell.addEventListener('click', this.onCellClick.bind(this));
+        this.cell.addEventListener('click',() => this.onCellClick());
+        this.cell.addEventListener('contextmenu',(e) => {
+            e.preventDefault();
+            if (!this.isOpened) {
+                if (this.isFlagged) {
+                    this.setFlag(false);
+                    
+                } else {
+                    this.setFlag(true);
+                }
+                checkLoseGame();
+            }
+            
+        });
         wrapper.append(cell);
     }
 }

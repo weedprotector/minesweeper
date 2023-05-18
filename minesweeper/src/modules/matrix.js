@@ -74,3 +74,21 @@ export function openAllBombs() {
         })
     })
 }
+
+
+export function checkLoseGame() {
+    let activeBombsCount = 0
+    matrix.forEach((matrixY, y) => {
+        matrixY.forEach((matrixX, x) => {
+            if (matrixX.isBomb && !matrixX.isFlagged) {
+                activeBombsCount++
+            } else {
+                activeBombsCount--
+            }
+        })
+    })
+    if (activeBombsCount == 0)  {
+        console.log('выиграл')
+    }
+    console.log(activeBombsCount)
+}
