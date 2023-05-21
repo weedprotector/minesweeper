@@ -86,3 +86,20 @@ $boxSize: 50px;
     height: 60px;
     width: 60px;
 }
+
+.win {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: slategrey;
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    &__question {
+        padding-top: 100px;
+        margin: 0 auto;
+        font-size: 45px;
+        color: greenyellow;
+    }
+
+}

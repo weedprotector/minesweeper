@@ -1,5 +1,7 @@
-import { checkLoseGame, createMatrix, getCountOfRoundedBombs, matrix, openAllBombs } from "./matrix";
+import { loseGame } from "./loseGame";
+import { checkLoseGame, checkWinGame, createMatrix, getCountOfRoundedBombs, matrix, openAllBombs } from "./matrix";
 import { welcome } from "./startGame";
+import { winGame } from "./winGame";
 
 const body = document.querySelector('body');
 const wrapper = document.createElement('div');
@@ -77,10 +79,11 @@ class Cell {
 
         if (this.isBomb) {
             openAllBombs();
+            loseGame()
         }
 
         if (this.isFlagged) {
-            this.cell.innerHTML = this.value;
+            this.cell.innerHTML = this.value ? this.value : '';
             this.cell.isOpened = true;
             this.cell.classList.remove('cell__start')
         }
@@ -95,7 +98,11 @@ class Cell {
             cell.classList.add(`cell__${this.value}`)
         };
         this.cell = cell;
-        this.cell.addEventListener('click',() => this.onCellClick());
+        this.cell.addEventListener('click',() => {
+            this.onCellClick()
+            checkWinGame();
+            
+        });
         this.cell.addEventListener('contextmenu',(e) => {
             e.preventDefault();
             if (!this.isOpened) {
@@ -105,7 +112,7 @@ class Cell {
                 } else {
                     this.setFlag(true);
                 }
-                checkLoseGame();
+                
             }
             
         });

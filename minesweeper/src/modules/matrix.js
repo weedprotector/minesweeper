@@ -1,11 +1,15 @@
 import { createCell } from "./cell";
 import { getRandomInt } from "./generateRandom";
+import { winGame } from "./winGame";
 
 export let matrix = [];
 
 export function createMatrix(width = 10, height = 10, bombCount = 10) {
     const welcome = document.querySelector('.welcome');
-    welcome.classList.add('hidden')
+    welcome ? welcome.remove() : undefined;
+    
+    const wrapper = document.querySelector('.wrapper');
+    wrapper.innerHTML = ''
 
     matrix = Array.from({length: height}, () => 
         Array.from({length: width}, () => 0)
@@ -21,9 +25,6 @@ export function createMatrix(width = 10, height = 10, bombCount = 10) {
             matrix[y][x] = newCell
         })
     })
-
-    
-    console.log(matrix);
 }
 
 function addBombs(bombCount) {
@@ -76,19 +77,16 @@ export function openAllBombs() {
 }
 
 
-export function checkLoseGame() {
-    let activeBombsCount = 0
+export function checkWinGame() {
+    let unopenedCells = 0
     matrix.forEach((matrixY, y) => {
         matrixY.forEach((matrixX, x) => {
-            if (matrixX.isBomb && !matrixX.isFlagged) {
-                activeBombsCount++
-            } else {
-                activeBombsCount--
+            if (!matrixX.isBomb && !matrixX.isOpened) {
+                unopenedCells++
             }
         })
     })
-    if (activeBombsCount == 0)  {
-        console.log('выиграл')
+    if (unopenedCells == 0) {
+        winGame();
     }
-    console.log(activeBombsCount)
 }
