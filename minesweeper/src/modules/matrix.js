@@ -1,23 +1,31 @@
 import { createCell } from "./cell";
 import { getRandomInt } from "./generateRandom";
+import { addFlagsCounter, createHudline } from "./hudline";
 import { winGame } from "./winGame";
 
 export let matrix = [];
+export let bombs;
+export let avaliableFlags;
 
 export function createMatrix(width = 10, height = 10, bombCount = 10) {
+    bombs = bombCount;
     const welcome = document.querySelector('.welcome');
     welcome ? welcome.remove() : undefined;
     
     const wrapper = document.querySelector('.wrapper');
     wrapper.innerHTML = ''
 
+    const body = document.querySelector('body');
+    body.classList.remove('overflow-hidden');
+
+
     matrix = Array.from({length: height}, () => 
         Array.from({length: width}, () => 0)
     );
 
     addBombs(bombCount);
-
-    
+    createHudline();
+    addFlagsCounter(0, bombCount)
 
     matrix.forEach((matrixY, y) => {
         matrixY.forEach((matrixX, x) => {
@@ -25,6 +33,7 @@ export function createMatrix(width = 10, height = 10, bombCount = 10) {
             matrix[y][x] = newCell
         })
     })
+
 }
 
 function addBombs(bombCount) {
@@ -89,4 +98,23 @@ export function checkWinGame() {
     if (unopenedCells == 0) {
         winGame();
     }
+}
+
+export function checkFlags() {
+    let flags = 0
+    matrix.forEach((matrixY, y) => {
+        matrixY.forEach((matrixX, x) => {
+            if (matrixX.isFlagged && !matrixX.isOpened) {
+                flags++
+            }
+        })
+    })
+    addFlagsCounter(flags)
+    checkAvaliableFlags(flags);
+}
+
+export function checkAvaliableFlags(flags) {
+    avaliableFlags = bombs - flags;
+    console.log(avaliableFlags)
+    return (avaliableFlags);
 }

@@ -1,5 +1,5 @@
 import { loseGame } from "./loseGame";
-import { checkLoseGame, checkWinGame, createMatrix, getCountOfRoundedBombs, matrix, openAllBombs } from "./matrix";
+import { avaliableFlags, bombs, checkFlags, checkLoseGame, checkWinGame, createMatrix, getCountOfRoundedBombs, matrix, openAllBombs } from "./matrix";
 import { welcome } from "./startGame";
 import { winGame } from "./winGame";
 
@@ -101,6 +101,7 @@ class Cell {
         this.cell.addEventListener('click',() => {
             this.onCellClick()
             checkWinGame();
+            checkFlags();
             
         });
         this.cell.addEventListener('contextmenu',(e) => {
@@ -109,10 +110,10 @@ class Cell {
                 if (this.isFlagged) {
                     this.setFlag(false);
                     
-                } else {
+                } else if (!this.isFlagged && avaliableFlags > 0){
                     this.setFlag(true);
-                }
-                
+                } 
+                checkFlags()
             }
             
         });

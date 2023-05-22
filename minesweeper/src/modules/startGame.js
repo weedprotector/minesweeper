@@ -5,10 +5,11 @@ export function welcome() {
     const startGame = document.createElement('div');
     startGame.classList.add('welcome');
     const welcomeMessage = document.createElement('div');
-    welcomeMessage.innerText = 'Добро пожаловать в Сапер КС:ГО'
+    welcomeMessage.innerText = 'Welcome in Minesweeper'
     welcomeMessage.classList.add('welcome__message')
     startGame.append(welcomeMessage);
     const button = document.createElement('button');
+    button.classList.add('welcome__button')
     button.innerText = 'НАЧАТЬ ИГРУ'
     startGame.append(button);
     body.append(startGame);
