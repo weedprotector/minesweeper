@@ -118,6 +118,7 @@ class Cell {
                     this.setFlag(true);
                 } 
                 checkFlags()
+                setTurns();
             }
             
         });

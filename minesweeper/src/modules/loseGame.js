@@ -18,13 +18,18 @@ export function loseGame() {
     button.addEventListener('click', () => {
         getValue();
         if (mode == "easy") {
+            const wrapper = document.querySelector('.wrapper');
+            wrapper.classList.contains('wrapper_hard') ? wrapper.classList.remove('wrapper_hard') : null;
+            wrapper.classList.contains('wrapper_medium') ? wrapper.classList.remove('wrapper_medium') : null;
             createMatrix()
         } else if (mode == "medium") {
             const wrapper = document.querySelector('.wrapper')
+            wrapper.classList.contains('wrapper_hard') ? wrapper.classList.remove('wrapper_hard') : null;
             wrapper.classList.add('wrapper_medium')
             createMatrix(15, 15, 25)
         } else if (mode == "hard") {
             const wrapper = document.querySelector('.wrapper')
+            wrapper.classList.contains('wrapper_medium') ? wrapper.classList.remove('wrapper_medium') : null;
             wrapper.classList.add('wrapper_hard')
             createMatrix(25, 25, 75)
         }

@@ -160,7 +160,7 @@ $boxSize: 60px;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 30px;
+    height: 50px;
     background-color:black;
     &__flagCounter {
         color: white;
@@ -171,7 +171,6 @@ $boxSize: 60px;
     &__restart {
         background-color: grey;
         color: white;
-        padding: 3px;
         border-radius: 8%;
         cursor: pointer;
     }

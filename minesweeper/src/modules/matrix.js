@@ -156,5 +156,5 @@ export function getValue() {
 export function setTurns() {
     turns++
     const hudlineTurns = document.querySelector('.hudline__turns');
-    hudlineTurns.innerText = `Ходов: ${turns}`
+    hudlineTurns.innerText = `Кликов: ${turns}`
 }

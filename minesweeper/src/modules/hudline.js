@@ -46,12 +46,12 @@ export function createHudline() {
     hudline.append(modeSelector);
     const restartButton = document.createElement('button');
     restartButton.classList.add('hudline__restart');
-    restartButton.innerText = 'Сохранить сложность и перезагрузить'
+    restartButton.innerText = 'save + restart'
     hudline.append(restartButton);
 
     const turns = document.createElement('div');
     turns.classList.add('hudline__turns');
-    turns.innerText = `Ходов: 0`;
+    turns.innerText = `Кликов: 0`;
     hudline.append(turns);
     
     const hudlineBombsCounter = document.createElement('div');

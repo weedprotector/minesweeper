@@ -154,7 +154,7 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 30px;
+  height: 50px;
   background-color: black;
 }
 .hudline__flagCounter {
@@ -166,7 +166,6 @@
 .hudline__restart {
   background-color: grey;
   color: white;
-  padding: 3px;
   border-radius: 8%;
   cursor: pointer;
 }
