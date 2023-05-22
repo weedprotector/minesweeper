@@ -1,5 +1,5 @@
 import { loseGame } from "./loseGame";
-import { avaliableFlags, bombs, checkFlags, checkLoseGame, checkWinGame, turns, createMatrix, getCountOfRoundedBombs, matrix, openAllBombs, setTurns } from "./matrix";
+import { avaliableFlags, bombs, checkFlags, checkLoseGame, checkWinGame, turns, createMatrix, getCountOfRoundedBombs, matrix, openAllBombs, setTurns, setTimer } from "./matrix";
 import { welcome } from "./startGame";
 import { winGame } from "./winGame";
 
@@ -80,7 +80,8 @@ class Cell {
 
         if (this.isBomb) {
             openAllBombs();
-            loseGame()
+            loseGame();
+            setTimer(false);
         }
 
         if (this.isFlagged) {

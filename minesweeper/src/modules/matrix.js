@@ -10,7 +10,6 @@ export let mode;
 export let turns = -1;
 
 export function createMatrix(width = 10, height = 10, bombCount = 10) {
-
     bombs = bombCount;
     const welcome = document.querySelector('.welcome');
     welcome ? welcome.remove() : undefined;
@@ -33,6 +32,7 @@ export function createMatrix(width = 10, height = 10, bombCount = 10) {
     getValue();
     turns = -1
     setTurns();
+    setTimer(true);
 
     matrix.forEach((matrixY, y) => {
         matrixY.forEach((matrixX, x) => {
@@ -157,4 +157,23 @@ export function setTurns() {
     turns++
     const hudlineTurns = document.querySelector('.hudline__turns');
     hudlineTurns.innerText = `Кликов: ${turns}`
+}
+
+export function setTimer(isOn) {
+    let time = 0;
+    const timer = document.querySelector('.hudline__timer');
+    timer.innerText = `Time: ${time}s`;
+
+    let timerId;
+    
+    if (isOn) {
+        timerId = setTimeout(function tick() {
+            time++
+            timer.innerText = `Time: ${time}s`
+            timerId = setTimeout(tick, 1000);
+          }, 1000);
+    } else {
+        clearTimeout(timerId);
+    }
+    
 }

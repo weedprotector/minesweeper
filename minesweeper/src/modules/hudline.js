@@ -53,6 +53,11 @@ export function createHudline() {
     turns.classList.add('hudline__turns');
     turns.innerText = `Кликов: 0`;
     hudline.append(turns);
+
+    const timer = document.createElement('div');
+    timer.classList.add('hudline__timer');
+/*     timer.innerText = `Time: 0s`; */
+    hudline.append(timer);
     
     const hudlineBombsCounter = document.createElement('div');
     hudlineBombsCounter.classList.add('hudline__bombCounter');
