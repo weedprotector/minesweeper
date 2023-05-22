@@ -6,6 +6,7 @@ import { winGame } from "./winGame";
 export let matrix = [];
 export let bombs;
 export let avaliableFlags;
+export let mode;
 
 export function createMatrix(width = 10, height = 10, bombCount = 10) {
     bombs = bombCount;
@@ -26,6 +27,8 @@ export function createMatrix(width = 10, height = 10, bombCount = 10) {
     addBombs(bombCount);
     createHudline();
     addFlagsCounter(0, bombCount)
+    restart();
+    getValue();
 
     matrix.forEach((matrixY, y) => {
         matrixY.forEach((matrixX, x) => {
@@ -115,6 +118,33 @@ export function checkFlags() {
 
 export function checkAvaliableFlags(flags) {
     avaliableFlags = bombs - flags;
-    console.log(avaliableFlags)
     return (avaliableFlags);
+}
+
+function restart() {
+    const restartButton = document.querySelector('.hudline__restart');
+    restartButton.addEventListener('click', () => {
+        getValue();
+        if (mode == "easy") {
+            const wrapper = document.querySelector('.wrapper');
+            wrapper.classList.contains('wrapper_hard') ? wrapper.classList.remove('wrapper_hard') : null;
+            wrapper.classList.contains('wrapper_medium') ? wrapper.classList.remove('wrapper_medium') : null;
+            createMatrix()
+        } else if (mode == "medium") {
+            const wrapper = document.querySelector('.wrapper')
+            wrapper.classList.contains('wrapper_hard') ? wrapper.classList.remove('wrapper_hard') : null;
+            wrapper.classList.add('wrapper_medium')
+            createMatrix(15, 15, 25)
+        } else if (mode == "hard") {
+            const wrapper = document.querySelector('.wrapper')
+            wrapper.classList.contains('wrapper_medium') ? wrapper.classList.remove('wrapper_medium') : null;
+            wrapper.classList.add('wrapper_hard')
+            createMatrix(25, 25, 75)
+        }
+    });
+}
+
+export function getValue() {
+    const selector = document.querySelector('#selector');
+    mode = selector.value;
 }

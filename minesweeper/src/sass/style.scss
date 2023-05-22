@@ -13,6 +13,24 @@ $boxSize: 60px;
     flex-wrap: wrap;
 }
 
+.wrapper_medium {
+    margin: 0 auto;
+    max-width: calc(#{$boxSize} * 15);
+    max-height: calc(#{$boxSize} * 15);
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrapper_hard {
+    margin: 0 auto;
+    max-width: calc(#{$boxSize} * 25);
+    max-height: calc(#{$boxSize} * 25);
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .welcome {
     position: fixed;
     justify-content: center;
@@ -149,5 +167,12 @@ $boxSize: 60px;
     }
     &__bombCounter {
         color: white;
+    }
+    &__restart {
+        background-color: grey;
+        color: white;
+        padding: 3px;
+        border-radius: 8%;
+        cursor: pointer;
     }
 }

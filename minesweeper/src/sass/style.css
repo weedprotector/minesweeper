@@ -10,6 +10,22 @@
   flex-wrap: wrap;
 }
 
+.wrapper_medium {
+  margin: 0 auto;
+  max-width: calc(60px * 15);
+  max-height: calc(60px * 15);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper_hard {
+  margin: 0 auto;
+  max-width: calc(60px * 25);
+  max-height: calc(60px * 25);
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .welcome {
   position: fixed;
   justify-content: center;
@@ -146,6 +162,13 @@
 }
 .hudline__bombCounter {
   color: white;
+}
+.hudline__restart {
+  background-color: grey;
+  color: white;
+  padding: 3px;
+  border-radius: 8%;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,8 @@
-import { createMatrix } from "./matrix";
+import { createMatrix, getValue, mode } from "./matrix";
 
 
 export function winGame() {
+    
     const body = document.querySelector('body');
     body.classList.add('overflow-hidden')
     const wrapper = document.querySelector('.wrapper');
@@ -16,7 +17,19 @@ export function winGame() {
     button.innerText = "OK LET'S GO";
     win.append(button);
     wrapper.append(win);
+
     button.addEventListener('click', () => {
-        createMatrix()
+        getValue();
+        if (mode == "easy") {
+            createMatrix()
+        } else if (mode == "medium") {
+            const wrapper = document.querySelector('.wrapper')
+            wrapper.classList.add('wrapper_medium')
+            createMatrix(15, 15, 25)
+        } else if (mode == "hard") {
+            const wrapper = document.querySelector('.wrapper')
+            wrapper.classList.add('wrapper_hard')
+            createMatrix(25, 25, 75)
+        }
     })
 }
