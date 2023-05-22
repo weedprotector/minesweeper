@@ -1,5 +1,5 @@
 import { loseGame } from "./loseGame";
-import { avaliableFlags, bombs, checkFlags, checkLoseGame, checkWinGame, createMatrix, getCountOfRoundedBombs, matrix, openAllBombs } from "./matrix";
+import { avaliableFlags, bombs, checkFlags, checkLoseGame, checkWinGame, turns, createMatrix, getCountOfRoundedBombs, matrix, openAllBombs, setTurns } from "./matrix";
 import { welcome } from "./startGame";
 import { winGame } from "./winGame";
 
@@ -62,6 +62,7 @@ class Cell {
             this.cell.classList.remove('cell__start')
         }
 
+
         if (!this.value) {
             const countOfRoundedBombs = getCountOfRoundedBombs(this.coordinates);
             this.isOpened = true;
@@ -99,6 +100,9 @@ class Cell {
         };
         this.cell = cell;
         this.cell.addEventListener('click',() => {
+            if (!this.isOpened) {
+                setTurns();
+            }
             this.onCellClick()
             checkWinGame();
             checkFlags();

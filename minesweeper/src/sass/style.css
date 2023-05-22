@@ -170,5 +170,8 @@
   border-radius: 8%;
   cursor: pointer;
 }
+.hudline__turns {
+  color: white;
+}
 
 /*# sourceMappingURL=style.css.map */

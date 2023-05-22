@@ -7,8 +7,10 @@ export let matrix = [];
 export let bombs;
 export let avaliableFlags;
 export let mode;
+export let turns = -1;
 
 export function createMatrix(width = 10, height = 10, bombCount = 10) {
+
     bombs = bombCount;
     const welcome = document.querySelector('.welcome');
     welcome ? welcome.remove() : undefined;
@@ -29,6 +31,8 @@ export function createMatrix(width = 10, height = 10, bombCount = 10) {
     addFlagsCounter(0, bombCount)
     restart();
     getValue();
+    turns = -1
+    setTurns();
 
     matrix.forEach((matrixY, y) => {
         matrixY.forEach((matrixX, x) => {
@@ -147,4 +151,10 @@ function restart() {
 export function getValue() {
     const selector = document.querySelector('#selector');
     mode = selector.value;
+}
+
+export function setTurns() {
+    turns++
+    const hudlineTurns = document.querySelector('.hudline__turns');
+    hudlineTurns.innerText = `Ходов: ${turns}`
 }
